@@ -8,11 +8,11 @@ import random
 
 def englishToSpongecase(p):
     scase = ""
-    for i in p:
+    for i in range(len(p)):
         if random.randint(0,1) == 0:
-            scase += i.upper()
+            scase += p[i].upper()
         else:
-            scase += i.lower()
+            scase += p[i].lower()
     return scase
 
 def main():
