@@ -8,12 +8,14 @@ import random
 
 def englishToSpongecase(p):
     scase = ""
-    for i in range(len(p)):
-        if random.randint(0,1) == 0:
-            scase += p[i].upper()
+    for i in p:
+        if i.isalpha():
+            if random.randint(0,1) == 0:
+                scase += i.upper()
+            else:
+                scase += i.lower()
         else:
-            scase += p[i].lower()
-    return scase
+            scase += i
 
 def main():
     text = input("Enter a string: ")
