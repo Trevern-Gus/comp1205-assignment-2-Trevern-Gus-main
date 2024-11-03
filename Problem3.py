@@ -18,6 +18,9 @@ def englishToSpongecase(p):
             scase += p[0].lower()
             uppercase = True
         for i in range(1,len(p)):
+            if p[i].isalpha() == False:
+                scase += p[i]
+                continue
             if uppercase:
                 scase += p[i].upper()
                 uppercase = False
