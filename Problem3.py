@@ -4,18 +4,17 @@ Question 3
 Create a function englishToSpongecase that will take a string as input and return the string with random alternation between uppercase and lowercase letters.
 
 """
-import random
+import random as r 
 
 def englishToSpongecase(p):
     scase = ""
     for i in p:
-        if i.isalpha():
-            if random.randint(0,1) == 0:
+        if ord(i) > 64 and ord(i) < 91 or ord(i) > 96 and ord(i) < 123:
+            if r.randint(0,1) == 0:
                 scase += i.upper()
             else:
                 scase += i.lower()
-        else:
-            scase += i
+    
 
 def main():
     text = input("Enter a string: ")
