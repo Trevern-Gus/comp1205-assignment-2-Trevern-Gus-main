@@ -14,6 +14,9 @@ def englishToSpongecase(p):
                 scase += i.upper()
             else:
                 scase += i.lower()
+        else:
+            scase += i
+    return scase
     
 
 def main():
