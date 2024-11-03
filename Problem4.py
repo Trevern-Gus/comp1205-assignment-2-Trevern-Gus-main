@@ -12,7 +12,7 @@ chosenwords = []
 special_chr = ["!", "@", "#", "$", "%", "^", "&", "*", "~"]
 lives = 4
 
-def loadwords():
+def loadWords():
     global WORDS
     try:
         with open("sevenletterwords.txt", 'r') as f:
@@ -26,7 +26,7 @@ def loadwords():
         print("File not found")
         return []
 
-def getwords():
+def getWords():
     global game_words
     global chosenwords
     r.shuffle(WORDS)
@@ -78,8 +78,8 @@ def main():
     global lives
 
     print(intro)
-    loadwords()
-    getwords()
+    loadWords()
+    getWords()
     print(f"{getComputerMemoryString()}\n...\n")
     while lives > 0:
         guess = askForPlayerGuess(chosenwords, lives)
