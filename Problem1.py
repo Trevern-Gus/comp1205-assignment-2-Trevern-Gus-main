@@ -30,11 +30,11 @@ def is_proper_fraction(numerator, denominator):
 def convert_to_mixed_fraction(numerator, denominator):
             whole = numerator // denominator
             if numerator % denominator == 0:
-                return whole
+                return str(whole)
             else:
                 remainder = numerator % denominator
                 fraction = f"{whole} + {remainder}/{denominator}"
-                return fraction
+                return str(fraction)
 
 def display_fraction_type(numerator, denominator):
     if is_proper_fraction(numerator, denominator):
