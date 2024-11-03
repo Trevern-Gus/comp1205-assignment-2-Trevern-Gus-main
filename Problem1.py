@@ -46,4 +46,5 @@ def main():
     numerator, denominator = get_input()
     display_fraction_type(numerator, denominator)
 
-main()
+if 'name' == '__main__':
+    main()

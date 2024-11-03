@@ -15,6 +15,11 @@ def englishToSpongecase(p):
             scase += i.lower()
     return scase
 
-print(englishToSpongecase("hello world"))
+def main():
+    text = input("Enter a string: ")
+    print(f"The Converted text is:{englishToSpongecase(text)}")
+
+if __name__ == "__main__":
+    main()
 
                 
