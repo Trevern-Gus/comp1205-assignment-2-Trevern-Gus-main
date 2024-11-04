@@ -63,13 +63,10 @@ def numMatchingLetters(guess, password):
     global lives
     lives -= 1
     count = 0
-    if guess == password:
-        return "A C C E S S G R A N T E D"
-    else:
-        for i in range(len(password)):
-            if guess[i] == password[i]:
-                count += 1
-        return count
+    for i in range(len(password)):
+        if guess[i] == password[i]:
+            count += 1
+    return count
     
       
 
@@ -85,7 +82,8 @@ def main():
         guess = askForPlayerGuess(chosenwords, lives)
         num = numMatchingLetters(guess, chosenwords[0])
         print(num)
-        if numMatchingLetters(guess, chosenwords[0]) == "A C C E S S G R A N T E D":
+        if numMatchingLetters(guess, chosenwords[0]) == 7:
+            print("A C C E S S G R A N T E D")
             break
         else:
             print(f'Access Denied ({num}/7 correct)')
