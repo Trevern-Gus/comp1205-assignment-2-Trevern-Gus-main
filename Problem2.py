@@ -15,14 +15,15 @@ def print_grid(grid):
 
 #2
 def get_user_guess(attempt):
-    try:
-        guess = int(attempt)
-        if 1 < guess < 30:
-            return guess
-        else:
+    while True:
+        try:
+            guess = int(attempt)
+            if 1 < guess and guess < 30:
+                return guess
+            else:
+                print("Please enter a valid number between 1 and 30")
+        except ValueError:
             print("Please enter a valid number between 1 and 30")
-    except ValueError:
-        print("Please enter a valid number between 1 and 30")
 
 #3
 def update_grid(grid, guess, guesses_made):

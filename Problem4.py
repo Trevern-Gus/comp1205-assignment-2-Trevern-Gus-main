@@ -87,7 +87,7 @@ def main():
         num = numMatchingLetters(guess, chosenwords[0])
         print(num)
         if numMatchingLetters(guess, chosenwords[0]) == 7:
-            print("A C C E S S G R A N T E D")
+            print('A C C E S S G R A N T E D')
             break
         else:
             print(f'Access Denied ({num}/7 correct)')
