@@ -16,10 +16,9 @@ def loadWords():
     global WORDS
     try:
         with open("sevenletterwords.txt", 'r') as f:
-            for word in f:
-                word = word.strip()
-                if len(word) == 7:
-                    WORDS.append(word)
+            content = f.read().replace(' ', '').strip()
+            for i in range(0, len(content), 7):
+                WORDS.append(content[i:i + 7])
             return WORDS
     except:
         Exception
