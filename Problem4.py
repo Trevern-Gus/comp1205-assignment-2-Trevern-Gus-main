@@ -36,8 +36,7 @@ def getWords():
     
     
 
-def getComputerMemoryString():
-    global chosenwords
+def getComputerMemoryString(words):
     num = ['0x12A4', '0x22B4', '0x12B4', '0x22C4']
     memstring = ''
     for i in range(4):
@@ -77,7 +76,7 @@ def main():
     print(intro)
     loadWords()
     getWords()
-    print(f"{getComputerMemoryString()}\n...\n")
+    print(f"{getComputerMemoryString(chosenwords)}\n...\n")
     while lives > 0:
         guess = askForPlayerGuess(chosenwords, lives)
         num = numMatchingLetters(guess, chosenwords[0])
