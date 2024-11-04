@@ -51,7 +51,7 @@ def getComputerMemoryString(words):
         return memstring
     except:
         Exception
-        return memstring
+        return []
     
 
 def askForPlayerGuess(chosenwords, guess_no):
