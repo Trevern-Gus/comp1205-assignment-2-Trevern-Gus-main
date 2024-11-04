@@ -28,6 +28,7 @@ def loadWords():
 def getWords():
     global game_words
     global chosenwords
+    global WORDS
     r.shuffle(WORDS)
     game_words = r.sample(WORDS, 12)
     chosenwords.insert(0, game_words[0])
@@ -96,3 +97,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+main()
