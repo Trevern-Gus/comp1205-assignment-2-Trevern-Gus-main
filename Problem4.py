@@ -69,7 +69,7 @@ def numMatchingLetters(guess, password):
         for i in range(len(password)):
             if guess[i] == password[i]:
                 count += 1
-        return f'Access Denied ({count}/7 correct)'
+        return count
     
       
 
@@ -83,9 +83,12 @@ def main():
     print(f"{getComputerMemoryString()}\n...\n")
     while lives > 0:
         guess = askForPlayerGuess(chosenwords, lives)
-        print(numMatchingLetters(guess, chosenwords[0]))
+        num = numMatchingLetters(guess, chosenwords[0])
+        print(num)
         if numMatchingLetters(guess, chosenwords[0]) == "A C C E S S G R A N T E D":
             break
+        else:
+            print(f'Access Denied ({num}/7 correct)')
     if lives == 0:
         print(f"Out of tries. Secret password was {chosenwords[0]}")
 
