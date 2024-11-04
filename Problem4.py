@@ -63,15 +63,17 @@ def askForPlayerGuess(chosenwords, guess_no):
             
 def numMatchingLetters(guess, password):
     global lives
-    lives -= 1
-    count = 0
-    for i in range(len(password)):
-        if guess[i] == password[i]:
-            count += 1
-    return count
+    try:
+        lives -= 1
+        count = 0
+        for i in range(7):
+            if guess[i] == password[i]:
+                count += 1
+        return count
+    except:
+        Exception
+        return 0
     
-      
-
 def main():
     global chosenwords 
     global lives
