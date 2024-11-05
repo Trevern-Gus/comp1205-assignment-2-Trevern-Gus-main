@@ -34,8 +34,6 @@ def getWords():
     chosenwords.insert(0, game_words[0])
     chosenwords += r.sample(game_words, 3)
     
-    
-
 def getComputerMemoryString(words):
     try:
         num = ['0x12A4', '0x22B4', '0x12B4', '0x22C4']
