@@ -1,6 +1,10 @@
 """
 Question 4 
 
+Aknowledgement: This problem was completed with assistance from the following resources:
+Joshua Langford
+Openai chatgpt
+visual studios copilot extension
 """
 import random as r
 

@@ -14,6 +14,11 @@ Convert the fraction to a mixed fraction (if applicable).
 If the fraction can be reduced to an integer (no remainder), display the integer.
 
 Display the result to the user based on the fraction type.
+
+Aknowledgement: This problem was completed with assistance from the following resources:
+Joshua Langford
+Openai chatgpt
+visual studios copilot extension
 """
 
 def get_input():

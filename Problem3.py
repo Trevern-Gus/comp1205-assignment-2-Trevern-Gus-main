@@ -3,6 +3,10 @@ Question 3
 
 Create a function englishToSpongecase that will take a string as input and return the string with random alternation between uppercase and lowercase letters.
 
+Aknowledgement: This problem was completed with assistance from the following resources:
+Joshua Langford
+Openai chatgpt
+visual studios copilot extension
 """
 import random as r
 
