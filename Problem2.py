@@ -38,14 +38,14 @@ def provide_feedback(guess, secret_number):
     if guess == secret_number:
         return "Congrats, you have won!"
     elif guess < secret_number:
-        return "Your number is too small. Try again"
+        return "Your number is too small"
     else:
-        return "Your number is too big. Try again"
+        return "Your number is too big"
 
 #5
 def save_score(score):
     with open("myScores.txt", "w") as file:
-        file.write(str(score))
+        file.write(f'Final score: {str(score)}\n')
 
 #6
 def play_game():
