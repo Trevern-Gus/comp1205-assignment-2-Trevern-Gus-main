@@ -15,12 +15,10 @@ def print_grid(grid):
 #2
 def get_user_guess(attempt):
     if attempt > 0:
-        guess = input("Enter your guessed NUMBER: ")
+        guess = input("Enter your guessed number: ")
         while guess.isdigit() == False or int(guess) < 2 or int(guess) > 29:
-            guess = input("Please enter a valid number: ")
+            guess = input("\nPlease enter a valid number: ")
         return int(guess)
-    elif attempt == 0:
-        return save_score(attempt)
 
 #3
 def update_grid(grid, guess, guesses_made):
@@ -29,7 +27,7 @@ def update_grid(grid, guess, guesses_made):
             if row[i] == '':
                 row[i] = guess
                 return grid
-
+    return grid
 #4
 def provide_feedback(guess, secret_number):
     if guess == secret_number:
@@ -48,7 +46,7 @@ def save_score(score):
 def play_game():
     Goal = random.randint(1, 30)
     lives = 10
-    grid = [['' for i in range(4)] for j in range(3)]
+    grid = [['' for i in range(4)] for j in range(5)]
     print_grid(grid)
     print(intro)
 
