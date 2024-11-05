@@ -16,9 +16,8 @@ def loadWords():
     global WORDS
     try:
         with open("sevenletterwords.txt", 'r') as f:
-            content = f.read().replace(' ', '').strip()
-            for i in range(0, len(content), 7):
-                WORDS.append(content[i:i + 7])
+            for word in f:
+                WORDS.append(word.strip())
             return WORDS
     except:
         Exception
@@ -29,27 +28,22 @@ def getWords():
     global game_words
     global chosenwords
     global WORDS
-    r.shuffle(WORDS)
     game_words = r.sample(WORDS, 12)
-    chosenwords.insert(0, game_words[0])
-    chosenwords += r.sample(game_words, 3)
+    chosenwords = [game_words[0]] + r.sample(game_words, 3)
     
-def getComputerMemoryString(words):
-    try:
-        num = ['0x12A4', '0x22B4', '0x12B4', '0x22C4']
-        memstring = ''
-        for i in range(4):
-            rubbish7 = ''.join(r.sample(special_chr, 7))
-            index = r.randint(0, 5)
-            part1, part2 = rubbish7[:index], rubbish7[index:]
-            rubbishmem = part1 + chosenwords[i] + part2
-            memstring += num[i] + ' ' + rubbishmem + ' '
-            if i == 1:
-                memstring += '\n'
-        return memstring
-    except:
-        Exception
-        return []
+def getComputerMemoryString(chosenwords):
+    global special_chr
+    num = ['0x12A4', '0x22B4', '0x12B4', '0x22C4']
+    memstring = ''
+    for i in range(4):
+        rubbish7 = ''.join(r.sample(special_chr, 7))
+        index = r.randint(0, 5)
+        part1, part2 = rubbish7[:index], rubbish7[index:]
+        rubbishmem = part1 + chosenwords[i] + part2
+        memstring += num[i] + ' ' + rubbishmem + ' '
+        if i == 1:
+            memstring += '\n'
+    return memstring
     
 
 def askForPlayerGuess(chosenwords, guess_no):
